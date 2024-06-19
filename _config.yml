@@ -7,3 +7,6 @@ theme: jekyll-theme-time-machine
 # Build settings
 markdown: kramdown
 
+include:
+  - assets/css/styles.css
+
