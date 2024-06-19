@@ -1,1 +1,9 @@
+title: My Professional Portfolio
+description: Welcome to my professional portfolio.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourusername.github.io" # the base hostname & protocol for your site
+
 theme: jekyll-theme-time-machine
+# Build settings
+markdown: kramdown
+
