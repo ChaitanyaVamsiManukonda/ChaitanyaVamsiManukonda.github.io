@@ -12,7 +12,7 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column; /* Update this for mobile responsiveness */
+    flex-direction: column;
     width: 90%;
     max-width: 1200px;
     height: 90%;
@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%; /* Update this for mobile responsiveness */
+    width: 100%;
     background-color: #555;
     padding: 20px;
 }
@@ -36,30 +36,30 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    width: 100%; /* Update this for mobile responsiveness */
+    width: 100%;
 }
 
 .title {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .description {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
 .button {
     display: block;
-    width: 80%;
-    max-width: 300px; /* Add this to restrict button width */
-    padding: 15px;
+    width: 100%;
+    max-width: 280px; /* Restrict button width */
+    padding: 10px; /* Adjust padding */
     margin: 10px 0;
     text-align: center;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.2em; /* Adjust font size */
     color: #fff;
     background-color: #777;
     border: 2px solid #fff;
@@ -83,5 +83,18 @@ body {
 
     .right {
         width: 65%;
+    }
+
+    .title {
+        font-size: 2.5em; /* Restore larger font size for larger screens */
+    }
+
+    .description {
+        font-size: 1.2em; /* Restore larger font size for larger screens */
+    }
+
+    .button {
+        font-size: 1.5em; /* Restore larger font size for larger screens */
+        padding: 15px; /* Restore larger padding for larger screens */
     }
 }
