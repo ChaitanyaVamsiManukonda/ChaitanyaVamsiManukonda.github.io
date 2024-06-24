@@ -12,6 +12,7 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column; /* Update this for mobile responsiveness */
     width: 90%;
     max-width: 1200px;
     height: 90%;
@@ -25,7 +26,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 35%;
+    width: 100%; /* Update this for mobile responsiveness */
     background-color: #555;
     padding: 20px;
 }
@@ -35,7 +36,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    width: 65%;
+    width: 100%; /* Update this for mobile responsiveness */
 }
 
 .title {
@@ -53,6 +54,7 @@ body {
 .button {
     display: block;
     width: 80%;
+    max-width: 300px; /* Add this to restrict button width */
     padding: 15px;
     margin: 10px 0;
     text-align: center;
@@ -68,4 +70,18 @@ body {
 .button:hover {
     background-color: #999;
     transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left {
+        width: 35%;
+    }
+
+    .right {
+        width: 65%;
+    }
 }
