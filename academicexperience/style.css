@@ -1,0 +1,121 @@
+/* General styling for the body to apply a consistent background and text color across the entire viewport */
+body {
+    font-family: Arial, sans-serif; /* Sets the default font for the body content */
+    background-color: #333; /* Dark gray background for contrast with text */
+    color: #fff; /* White text color for readability */
+    margin: 0; /* Removes the default browser margin around the body */
+    padding: 0; /* Removes the default browser padding around the body */
+    display: flex; /* Enables flexbox layout to center the container */
+    justify-content: center; /* Horizontally centers the container in the viewport */
+    align-items: center; /* Vertically centers the container in the viewport */
+    height: 100vh; /* Sets the body height to cover the full viewport height */
+    width: 100vw; /* Sets the body width to cover the full viewport width */
+    overflow: hidden; /* Hides any content that overflows the body's box */
+}
+
+/* The main container that holds all content, designed to fill the viewport */
+.container {
+    display: flex; /* Enables flexbox layout for flexible content arrangement */
+    flex-direction: column; /* Stacks children vertically on smaller screens */
+    width: 100%; /* Container takes full width of the parent (body) */
+    height: 100%; /* Container takes full height of the parent (body) */
+    max-width: none; /* Ensures the container is not restricted by maximum width */
+    background-color: #2c2b2b; /* Dark background color for the container */
+    margin: 0; /* Ensures there is no space outside the container */
+    padding: 0; /* Ensures there is no space inside the container edge */
+    overflow: auto; /* Allows scrolling within the container if content overflows */
+    align-items: stretch; /* Stretches child elements to fill the available width */
+}
+
+/* Styling for both the left and right sections of the container */
+.left, .right {
+    padding: 20px; /* Adds spacing inside both the left and right sections */
+    flex-grow: 1; /* Allows both sections to grow and fill the available space */
+}
+
+/* Specific styling for the left section */
+.left {
+    background-color: transparent; /* Makes the background transparent, showing the container's color */
+    display: flex; /* Enables flexbox layout within the left section */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: space-evenly; /* Distributes space evenly among children */
+    align-items: center; /* Centers children horizontally */
+}
+
+/* Specific styling for the right section */
+.right {
+    background-image: url('background.jpeg'); /* Sets a background image for visual interest */
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent overlay to darken the background image */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-blend-mode: overlay; /* Blends the background image with the color overlay */
+    display: flex; /* Enables flexbox layout within the right section */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers children vertically */
+}
+
+/* Styling for titles and descriptions for better text alignment and readability */
+.title, .description {
+    text-align: center; /* Centers the text */
+}
+
+/* Styling specific for the title for emphasis */
+.title {
+    font-size: 1.8em; /* Larger font size for titles */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Styling specific for descriptions for clarity */
+.description {
+    font-size: 1em; /* Standard font size for descriptions */
+    line-height: 1.4; /* Increased line height for better readability */
+    margin-bottom: 10px; /* Space below each description */
+}
+
+/* Styling for buttons to make them interactive and visually appealing */
+.button {
+    display: block; /* Makes the button a block element to fill space */
+    width: 90%; /* Sets the button width relative to its container */
+    max-width: 250px; /* Limits button width for larger screens */
+    padding: 10px; /* Padding inside the button for a better click area */
+    margin: 10px auto; /* Centers the button horizontally and adds space around it */
+    text-align: center; /* Ensures text inside the button is centered */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 1.2em; /* Larger text for better visibility */
+    color: #fff; /* White text color for contrast */
+    background-color: #272424; /* Dark background for the button */
+    border-radius: 5px; /* Rounded corners for aesthetic appeal */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Hover effects for buttons to indicate interactivity */
+.button:hover {
+    background-color: #999; /* Changes background color on hover */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+/* Media queries for adaptive layouts on different screen sizes */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Changes layout to horizontal row on wider screens */
+    }
+
+    .left {
+        width: 20%; /* Sets fixed width for the left section on wider screens */
+    }
+
+    .right {
+        width: 80%; /* Sets fixed width for the right section on wider screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 2.5em; /* Increases title font size on larger screens */
+    }
+
+    .description {
+        font-size: 1.2em; /* Increases description font size on larger screens */
+    }
+}
