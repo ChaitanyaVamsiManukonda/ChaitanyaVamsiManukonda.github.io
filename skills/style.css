@@ -44,12 +44,6 @@ body {
 
 /* Specific styling for the right section */
 .right {
-    background-image: url('background.jpeg'); /* Sets a background image for visual interest */
-    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent overlay to darken the background image */
-    background-size: cover; /* Ensures the background image covers the entire section */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    background-blend-mode: overlay; /* Blends the background image with the color overlay */
     display: flex; /* Enables flexbox layout within the right section */
     flex-direction: column; /* Stacks children vertically */
     justify-content: center; /* Centers children vertically */
