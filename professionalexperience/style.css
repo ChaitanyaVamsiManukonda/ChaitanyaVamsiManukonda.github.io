@@ -1,7 +1,7 @@
 /* General styling for the body to apply a consistent background and text color across the entire viewport */
 body {
     font-family: Arial, sans-serif; /* Sets the default font for the body content */
-    background-color: #333; /* Dark gray background for contrast with text */
+    background-color: #000000; /* Dark gray background for contrast with text */
     color: #fff; /* White text color for readability */
     margin: 0; /* Removes the default browser margin around the body */
     padding: 0; /* Removes the default browser padding around the body */
@@ -20,7 +20,7 @@ body {
     width: 100%; /* Container takes full width of the parent (body) */
     height: 100%; /* Container takes full height of the parent (body) */
     max-width: none; /* Ensures the container is not restricted by maximum width */
-    background-color: #2c2b2b; /* Dark background color for the container */
+    background-color: #000000; /* Dark background color for the container */
     margin: 0; /* Ensures there is no space outside the container */
     padding: 0; /* Ensures there is no space inside the container edge */
     overflow: auto; /* Allows scrolling within the container if content overflows */
