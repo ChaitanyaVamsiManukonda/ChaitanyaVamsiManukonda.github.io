@@ -1,7 +1,6 @@
-/* General styling for the body to apply a consistent background and text color across the entire viewport */
 body {
-    font-family: Arial, sans-serif; /* Sets the default font for the body content */
-    background-color: #000000; /* Dark gray background for contrast with text */
+font-family: Arial, sans-serif; /* Sets the default font for the body content */
+    background-color: #333; /* Dark gray background for contrast with text */
     color: #fff; /* White text color for readability */
     margin: 0; /* Removes the default browser margin around the body */
     padding: 0; /* Removes the default browser padding around the body */
@@ -20,7 +19,7 @@ body {
     width: 100%; /* Container takes full width of the parent (body) */
     height: 100%; /* Container takes full height of the parent (body) */
     max-width: none; /* Ensures the container is not restricted by maximum width */
-    background-color: #000000; /* Dark background color for the container */
+    background-color: #2c2b2b; /* Dark background color for the container */
     margin: 0; /* Ensures there is no space outside the container */
     padding: 0; /* Ensures there is no space inside the container edge */
     overflow: auto; /* Allows scrolling within the container if content overflows */
@@ -44,6 +43,12 @@ body {
 
 /* Specific styling for the right section */
 .right {
+    background-image: url('background.jpeg'); /* Sets a background image for visual interest */
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent overlay to darken the background image */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-blend-mode: overlay; /* Blends the background image with the color overlay */
     display: flex; /* Enables flexbox layout within the right section */
     flex-direction: column; /* Stacks children vertically */
     justify-content: center; /* Centers children vertically */
@@ -89,7 +94,65 @@ body {
     transform: scale(1.05); /* Slightly enlarges the button on hover */
 }
 
-/* Media queries for adaptive layouts on different screen sizes */
+.timeline {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #c5c5c5;
+}
+
+.timeline-card {
+    position: relative;
+    width: 90%;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left: 5%; /* Ensure cards are centered with respect to the timeline */
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #c5c5c5;
+    border-radius: 50%;
+    top: -13px;
+    bottom: 0;
+    left: 46.8%;
+    z-index: 1;
+}
+
+.read-more {
+    display: block;
+    margin-top: 10px;
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
 @media (min-width: 768px) {
     .container {
         flex-direction: row; /* Changes layout to horizontal row on wider screens */
