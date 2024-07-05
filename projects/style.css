@@ -1,14 +1,15 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 .container {
@@ -17,7 +18,7 @@ body {
     width: 100%;
     height: 100%;
     max-width: none;
-    background-color: #2c2b2b;
+    background-color: #000000;
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -30,26 +31,20 @@ body {
 }
 
 .left {
-    background-color: transparent;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-evenly;
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
     align-items: center;
 }
 
 .right {
-    background-image: url('background.jpeg');
-    background-color: rgba(0, 0, 0, 0.6);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
     height: 100%;
-    align-items: center; /* Center the timeline within the right section */
+    align-items: center;
 }
 
 .title, .description {
@@ -72,7 +67,7 @@ body {
     width: 90%;
     max-width: 250px;
     padding: 10px;
-    margin: 10px auto;
+    margin: 26px auto;
     text-align: center;
     text-decoration: none;
     font-size: 1.2em;
@@ -100,16 +95,14 @@ body {
     top: 0;
     bottom: 0;
     left: 50%;
-    right: 50%;
     width: 2px;
     background: #c5c5c5;
-    
 }
 
 .timeline-card {
     position: relative;
     width: 90%;
-    max-width: 800px; /* Add a max-width to prevent the card from being too wide */
+    max-width: 800px;
     padding: 20px;
     background: rgb(8, 8, 8);
     border-radius: 8px;
@@ -117,7 +110,7 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
     left: 50%;
-    transform: translateX(-50%); /* Center the card horizontally */
+    transform: translateX(-50%);
 }
 
 .timeline-card::before {
@@ -130,7 +123,7 @@ body {
     border-radius: 50%;
     top: -13px;
     left: 50%;
-    transform: translateX(-45.3%);
+    transform: translateX(-50%);
     z-index: 1;
 }
 
