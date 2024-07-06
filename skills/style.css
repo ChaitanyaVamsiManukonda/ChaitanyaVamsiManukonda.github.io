@@ -1,115 +1,172 @@
-/* General styling for the body to apply a consistent background and text color across the entire viewport */
 body {
-    font-family: Arial, sans-serif; /* Sets the default font for the body content */
-    background-color: #000000; /* Dark gray background for contrast with text */
-    color: #fff; /* White text color for readability */
-    margin: 0; /* Removes the default browser margin around the body */
-    padding: 0; /* Removes the default browser padding around the body */
-    display: flex; /* Enables flexbox layout to center the container */
-    justify-content: center; /* Horizontally centers the container in the viewport */
-    align-items: center; /* Vertically centers the container in the viewport */
-    height: 100vh; /* Sets the body height to cover the full viewport height */
-    width: 100vw; /* Sets the body width to cover the full viewport width */
-    overflow: hidden; /* Hides any content that overflows the body's box */
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* The main container that holds all content, designed to fill the viewport */
 .container {
-    display: flex; /* Enables flexbox layout for flexible content arrangement */
-    flex-direction: column; /* Stacks children vertically on smaller screens */
-    width: 100%; /* Container takes full width of the parent (body) */
-    height: 100%; /* Container takes full height of the parent (body) */
-    max-width: none; /* Ensures the container is not restricted by maximum width */
-    background-color: #000000; /* Dark background color for the container */
-    margin: 0; /* Ensures there is no space outside the container */
-    padding: 0; /* Ensures there is no space inside the container edge */
-    overflow: auto; /* Allows scrolling within the container if content overflows */
-    align-items: stretch; /* Stretches child elements to fill the available width */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: #2c2b2b;
+    overflow: hidden;
 }
 
-/* Styling for both the left and right sections of the container */
-.left, .right {
-    padding: 20px; /* Adds spacing inside both the left and right sections */
-    flex-grow: 1; /* Allows both sections to grow and fill the available space */
-}
-
-/* Specific styling for the left section */
 .left {
-    background-color: transparent; /* Makes the background transparent, showing the container's color */
-    display: flex; /* Enables flexbox layout within the left section */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: space-evenly; /* Distributes space evenly among children */
-    align-items: center; /* Centers children horizontally */
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 10px;
 }
 
-/* Specific styling for the right section */
 .right {
-    display: flex; /* Enables flexbox layout within the right section */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers children vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start ;
+    align-items: center;
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100%;
 }
 
-/* Styling for titles and descriptions for better text alignment and readability */
+.right-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
 .title, .description {
-    text-align: center; /* Centers the text */
+    text-align: center;
 }
 
-/* Styling specific for the title for emphasis */
 .title {
-    font-size: 1.8em; /* Larger font size for titles */
-    margin-bottom: 10px; /* Space below the title */
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
 
-/* Styling specific for descriptions for clarity */
 .description {
-    font-size: 1em; /* Standard font size for descriptions */
-    line-height: 1.4; /* Increased line height for better readability */
-    margin-bottom: 10px; /* Space below each description */
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 10px;
 }
 
-/* Styling for buttons to make them interactive and visually appealing */
 .button {
-    display: block; /* Makes the button a block element to fill space */
-    width: 90%; /* Sets the button width relative to its container */
-    max-width: 250px; /* Limits button width for larger screens */
-    padding: 10px; /* Padding inside the button for a better click area */
-    margin: 10px auto; /* Centers the button horizontally and adds space around it */
-    text-align: center; /* Ensures text inside the button is centered */
-    text-decoration: none; /* Removes underline from links */
-    font-size: 1.2em; /* Larger text for better visibility */
-    color: #fff; /* White text color for contrast */
-    background-color: #272424; /* Dark background for the button */
-    border-radius: 5px; /* Rounded corners for aesthetic appeal */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    display: block;
+    width: 90%;
+    max-width: 250px;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #272424;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Hover effects for buttons to indicate interactivity */
 .button:hover {
-    background-color: #999; /* Changes background color on hover */
-    transform: scale(1.05); /* Slightly enlarges the button on hover */
+    background-color: #999;
+    transform: scale(1.05);
 }
 
-/* Media queries for adaptive layouts on different screen sizes */
+.timeline {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #c5c5c5;
+}
+
+.timeline-card {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgb(34, 34, 34);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #c5c5c5;
+    border-radius: 50%;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.read-more {
+    display: block;
+    margin-top: 10px;
+    background: #007BFF;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
 @media (min-width: 768px) {
     .container {
-        flex-direction: row; /* Changes layout to horizontal row on wider screens */
+        flex-direction: row;
     }
 
     .left {
-        width: 20%; /* Sets fixed width for the left section on wider screens */
+        width: 20%;
     }
 
     .right {
-        width: 80%; /* Sets fixed width for the right section on wider screens */
+        width: 80%;
     }
 }
 
 @media (min-width: 1024px) {
     .title {
-        font-size: 2.5em; /* Increases title font size on larger screens */
+        font-size: 2.5em;
     }
 
     .description {
-        font-size: 1.2em; /* Increases description font size on larger screens */
+        font-size: 1.2em;
     }
 }
