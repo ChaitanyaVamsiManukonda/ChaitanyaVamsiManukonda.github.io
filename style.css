@@ -152,6 +152,31 @@ body {
     background: #0056b3;
 }
 
+.hero_section {
+    text-align: center;
+}
+
+.changing-text::before {
+    content: "Software Engineer";
+    animation: changeText 6s infinite;
+    color: #020202;
+}
+
+@keyframes changeText {
+    0%, 20% {
+        content: "Software Engineer";
+    }
+    25%, 45% {
+        content: "Web Developer";
+    }
+    50%, 70% {
+        content: "Cyber Security Analyst";
+    }
+    75%, 95% {
+        content: "Data Analyst";
+    }
+}
+
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
