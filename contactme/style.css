@@ -31,6 +31,12 @@ body {
 }
 
 .right {
+    background-image: url('background.jpeg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
     display: flex;
     flex-direction: column;
     justify-content: flex-start ;
