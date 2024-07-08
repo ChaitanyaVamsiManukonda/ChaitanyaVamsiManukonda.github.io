@@ -159,7 +159,7 @@ body {
 .changing-text::before {
     content: "Software Engineer";
     animation: changeText 6s infinite;
-    color: #020202;
+    color: #f0f1c4;
 }
 
 @keyframes changeText {
