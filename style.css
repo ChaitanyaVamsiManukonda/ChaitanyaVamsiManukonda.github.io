@@ -31,6 +31,9 @@ body {
     padding: 10px;
 }
 
+.junior{
+    color: f0f1c4 }
+
 .right {
     display: flex;
     flex-direction: column;
