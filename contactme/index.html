@@ -18,18 +18,39 @@
         </div>
         <div class="right">
             <h1 class="title">Contact Me</h1>
-            <p class="description">Please contact me using the form below. I will respond to you in or less than 24hrs</p>
+            <p class="description">Please contact me using the form below (Estimated response time: less than 24hrs for valid requests)</p>
             <div>
                 <form action="https://formspree.io/f/xkgwnabq" method="POST">
-                    <label>
-                        Your email:
-                        <input type="email" name="email">
-                    </label>
-                    <label>
-                        Your message:
-                        <textarea name="message"></textarea>
-                    </label>
-                    <button type="submit">Send</button>
+                    <table>
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" id="name" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contact">Contact Number:</label></td>
+                            <td><input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="message">Message:</label></td>
+                            <td><textarea id="message" name="message" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contact-method">Preferred Contact Method:</label></td>
+                            <td>
+                                <select id="contact-method" name="contact-method" required>
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit">Send</button></td>
+                        </tr>
+                    </table>
                 </form>
             </div>
         </div>
