@@ -31,13 +31,14 @@ body {
     padding: 10px;
 }
 
-.junior{
-    color: f0f1c4 }
+.junior {
+    color: #f0f1c4; /* Added missing '#' */
+}
 
 .right {
     display: flex;
     flex-direction: column;
-    justify-content: center ;
+    justify-content: center;
     align-items: center;
     flex-grow: 1;
     overflow-y: auto;
@@ -61,37 +62,31 @@ body {
     margin-bottom: 10px;
 }
 
+.button, .buttonon {
+    display: block;
+    width: 90%;
+    max-width: 250px;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 .button {
-    display: block;
-    width: 90%;
-    max-width: 250px;
-    padding: 10px;
-    margin: 10px auto;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #fff;
     background-color: #272424;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
 }
-.buttonon {
-    display: block;
-    width: 90%;
-    max-width: 250px;
-    padding: 10px;
-    margin: 10px auto;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #fff;
-    background-color: #999;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-}
+
 .button:hover {
     background-color: #999;
     transform: scale(1.05);
+}
+
+.buttonon {
+    background-color: #999;
 }
 
 .timeline {
@@ -119,8 +114,7 @@ body {
     background: rgb(34, 34, 34);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -166,18 +160,10 @@ body {
 }
 
 @keyframes changeText {
-    0%, 20% {
-        content: "Software Engineer";
-    }
-    25%, 45% {
-        content: "Web Developer";
-    }
-    50%, 70% {
-        content: "Cyber Security Analyst";
-    }
-    75%, 95% {
-        content: "Data Analyst";
-    }
+    0%, 20% { content: "Software Engineer"; }
+    25%, 45% { content: "Web Developer"; }
+    50%, 70% { content: "Cyber Security Analyst"; }
+    75%, 95% { content: "Data Analyst"; }
 }
 
 @media (min-width: 768px) {
