@@ -54,8 +54,9 @@ body {
 }
 
 .title {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .description {
