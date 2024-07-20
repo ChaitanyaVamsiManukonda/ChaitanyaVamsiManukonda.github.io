@@ -35,8 +35,6 @@ body {
 }
 
 .right {
-    background: url('background.jpeg') center/cover no-repeat, rgba(0, 0, 0, 0.6);
-    background-blend-mode: overlay;
     justify-content: flex-start;
     flex-grow: 1;
     overflow-y: auto;
@@ -64,6 +62,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 .button, .buttonon, .read-more {
@@ -194,9 +193,11 @@ button:hover {
 
 #menu-toggle {
     display: none;
+    background-color: transparent;
 }
 
 .menu-icon {
+    background-color: transparent;
     display: none;
     font-size: 2em;
     color: white;
@@ -207,6 +208,8 @@ button:hover {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        background: url('background.jpeg') center/cover no-repeat, rgba(0, 0, 0, 0.6);
+        background-blend-mode: overlay;
     }
 
     .left {
@@ -217,8 +220,6 @@ button:hover {
     .right {
         width: 100%;
         padding: 10px;
-        background: url('background.jpeg') center/cover no-repeat, rgba(0, 0, 0, 0.6);
-        background-blend-mode: overlay;
     }
 
     .button, .buttonon {
@@ -242,9 +243,10 @@ button:hover {
     .left {
         width: 20%; 
         display: flex; 
-
-    .right {
-        width: 80%; 
     }
-}
+    .right {
+        width: 80%;
+        background: url('background.jpeg') center/cover no-repeat, rgba(0, 0, 0, 0.6);
+        background-blend-mode: overlay;
+    }
 }
