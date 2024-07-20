@@ -112,7 +112,7 @@ body {
     background-color: #fff;
     color: #eee9e9;
     margin: 5px;
-    border: 1px solid #00bfff;
+    border: 1px solid #cdd6d8;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -147,6 +147,18 @@ body {
     background-color: #4fa508;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -154,16 +166,27 @@ body {
 
     .left {
         width: 100%;
+        display: none;
     }
 
     .right {
         width: 100%;
+        padding: 10px;
     }
     .button, .buttonon {
         width: 90%;
         max-width: 250px;
     }
+
+    #menu-toggle:checked + .menu-icon + .left {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }
+
 
 @media (max-width: 480px) {
     .left {
@@ -171,11 +194,26 @@ body {
     }
 
     .right {
-        width: 100%; /* Adjust the width to take the remaining space */
+        width: 100%; 
     }
 
     .button, .buttonon {
         width: 100%;
-        min-width: 100px; /* Reduce the max-width for smaller screens */
+        min-width: 100px; 
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    } 
+
+    .left {
+        width: 20%;
+        display: flex;
+    }
+
+    .right {
+        width: 80%;
     }
 }
