@@ -166,54 +166,38 @@ body {
 
     .left {
         width: 100%;
-        display: none;
+        display: none; 
     }
 
     .right {
         width: 100%;
         padding: 10px;
     }
+
     .button, .buttonon {
-        width: 90%;
-        max-width: 250px;
+        width: 100%;
     }
 
     #menu-toggle:checked + .menu-icon + .left {
-        display: flex;
+        display: flex; 
     }
 
     .menu-icon {
-        display: block;
+        display: block; 
     }
 }
 
-
-@media (max-width: 480px) {
-    .left {
-        width: 100%;
-    }
-
-    .right {
-        width: 100%; 
-    }
-
-    .button, .buttonon {
-        width: 100%;
-        min-width: 100px; 
-    }
-}
-
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .container {
         flex-direction: row;
-    } 
+    }
 
     .left {
-        width: 20%;
-        display: flex;
-    }
+        width: 20%; 
+        display: flex; 
 
     .right {
-        width: 80%;
+        width: 80%; 
     }
+}
 }
