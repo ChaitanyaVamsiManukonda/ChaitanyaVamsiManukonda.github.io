@@ -217,6 +217,8 @@ button:hover {
     .right {
         width: 100%;
         padding: 10px;
+        background: url('background.jpeg') center/cover no-repeat, rgba(0, 0, 0, 0.6);
+        background-blend-mode: overlay;
     }
 
     .button, .buttonon {
