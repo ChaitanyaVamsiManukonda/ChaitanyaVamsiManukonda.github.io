@@ -192,26 +192,57 @@ button:hover {
     background-color: #45a049;
 }
 
-@media (min-width: 768px) {
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        display: none; 
+    }
+
+    .right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .button, .buttonon {
+        width: 100%;
+    }
+
+    #menu-toggle:checked + .menu-icon + .left {
+        display: flex; 
+    }
+
+    .menu-icon {
+        display: block; 
+    }
+}
+
+@media (min-width: 769px) {
     .container {
         flex-direction: row;
     }
 
     .left {
-        width: 20%;
-    }
+        width: 20%; 
+        display: flex; 
 
     .right {
-        width: 80%;
+        width: 80%; 
     }
 }
-
-@media (min-width: 1024px) {
-    .title {
-        font-size: 2.5em;
-    }
-
-    .description {
-        font-size: 1.2em;
-    }
 }
