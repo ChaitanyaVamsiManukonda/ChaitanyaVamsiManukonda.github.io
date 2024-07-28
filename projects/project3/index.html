@@ -1,1 +1,78 @@
-N/A
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <div class="left">
+            <div class="buttonon">HOME</div>
+            <a href="https://chaitanyavamsimanukonda.github.io/skills" class="button">SKILLS</a>
+            <a href="https://chaitanyavamsimanukonda.github.io/projects" class="button">PROJECTS</a>
+            <a href="https://chaitanyavamsimanukonda.github.io/professionalexperience" class="button">PROFESSIONAL EXPERIENCE</a>
+            <a href="https://chaitanyavamsimanukonda.github.io/academicexperience" class="button">ACADEMIC EXPERIENCE</a>
+            <a href="https://chaitanyavamsimanukonda.github.io/contactme" class="button">CONTACT ME</a>
+        </div>
+        <div class="right">
+            <h1>Predictive Modeling for Demand Forecasting and Maintenance in Grocery Stores</h1>
+            <p>Objective: This project aimed to develop a machine learning model to forecast the weekly sales of a grocery store, thereby enhancing inventory control and decision-making processes which employs advanced machine learning techniques to create a predictive model that enhances inventory management and maintenance scheduling in grocery stores.</p>
+        
+            <h3>Introduction</h3>
+            <p>This project leverages historical sales data from a grocery store to forecast future sales and determine maintenance needs using machine learning models developed in Python. The focus is primarily on utilizing the Random Forest Regressor method from the Scikit-Learn module to predict weekly sales, thereby aiding in more informed decision-making and efficient inventory control.</p>
+            
+            <h3>Dataset</h3>
+            <p>
+                Training Data: Historical sales data including features such as sales volume, week, and other relevant characteristics.<br>
+                Preprocessing Steps:<br>
+                o Converted the 'week' column to Unix timestamp.<br>
+                o Removed duplicates and missing values.<br>
+                o Defined features (X) excluding 'units_sold' and 'week', and the target variable (y) as 'units_sold'.<br>
+                o Split the dataset into 80% training and 20% testing sets.
+            </p>
+        
+            <h3>Model Development</h3>
+            <p>
+                Initial Model: Tried Linear Regression, which resulted in low R2 scores, indicating inefficiency.<br>
+                Chosen Model: Random Forest Regressor, which is well-suited for regression problems.<br>
+                Parameter Tuning: Used Grid Search to optimize parameters (n_estimators, max_depth, max_leaf_nodes).<br>
+                Performance Metrics:<br>
+                o Initial R2 score: 0.770<br>
+                o Improved R2 score: 0.772<br>
+                o RMSE: 27.306
+            </p>
+        
+            <h3>Data Collection and Preprocessing</h3>
+            <p>The dataset used, sourced from Kaggle, includes variables such as sales volume per week, store ID, SKU ID, total price, base price, and indicators for featured and display status of SKUs. Preprocessing steps were meticulously performed, which included converting dates into Unix timestamps for easier manipulation, removing duplicates, and handling missing data, ensuring the dataset was clean and structured for accurate modeling.</p>
+        
+            <h3>Model Development and Analysis</h3>
+            <p>
+                The project utilized Python for developing the predictive model. Here’s an overview of the technical process:<br>
+                Feature Engineering: The data was first loaded into a pandas DataFrame. Features were engineered by excluding non-relevant variables and focusing on those impacting sales directly.<br>
+                Model Training and Selection: The dataset was split into training and testing sets, with 80% used for training. A Random Forest Regressor was then trained with this data.<br>
+                Parameter Tuning: Parameter tuning was conducted using a grid search approach to optimize the model parameters such as n_estimators, max_depth, and max_leaf_nodes. This step was crucial for enhancing model performance, focusing on maximizing the R2 score and minimizing the RMSE.
+            </p>
+            
+            <h3>Results</h3>
+            <p>
+                The final model explained 77.2% of the variance in the data.<br>
+                The model's predictions deviated by an average of 27.304 units from the actual values.
+            </p>
+        
+            <p>The project detailed in "Predictive Modeling for Demand Forecasting and Maintenance in Grocery Stores" employs advanced machine learning techniques to create a predictive model that enhances inventory management and maintenance scheduling in grocery stores. This initiative not only aims to streamline operations but also to improve the customer experience by ensuring product availability and optimizing store functioning.</p>
+            
+            <h3>Expected Outcomes and Future Work</h3>
+            <p>The expected outcomes of this project include more accurate demand forecasting, optimized inventory levels, and enhanced customer satisfaction through better product availability. The predictive model's success in the grocery store context illustrates its potential applicability in other retail environments, promising significant improvements in operational efficiencies.</p>
+        
+            <h3>Conclusion</h3>
+            <p>Utilizing predictive modeling in grocery stores represents a significant advancement in how retailers can harness data to forecast demand and schedule maintenance effectively. The project not only demonstrates the practical application of machine learning in retail but also sets a precedent for future innovations in the industry.</p>
+            
+            <p>This description provides a comprehensive overview of the project's scope, emphasizing the technical processes and the strategic implementation of machine learning techniques to achieve tangible improvements in grocery store operations.</p>
+        </div>
+    </div>
+</body>
+</html>
