@@ -65,12 +65,6 @@ body {
     line-height: 1.4;
     margin-bottom: 10px;
 }
-.subheading {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    color: #d1d4d6;
-}
 .button, .buttonon {
     display: block;
     width: 90%;
