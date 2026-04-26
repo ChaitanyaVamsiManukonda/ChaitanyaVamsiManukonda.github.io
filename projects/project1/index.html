@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 | Chaitanya Vamsi Manukonda</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .content-section { margin-top: 2rem; }
+        .content-section h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.4rem; }
+        .content-section p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); }
+        .expandable-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .expandable-content.expanded { 
+            max-height: 2000px; /* arbitrary large value */
+            opacity: 1;
+        }
+        .see-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .see-more-btn:hover {
+            background: var(--accent-primary);
+            color: var(--bg-darker);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">CVM.</div>
+            <div class="nav-links">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="../../skills/" class="nav-link">Skills</a>
+                <a href="../../projects/" class="nav-link active">Projects</a>
+                <a href="../../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../../contactme/" class="nav-link">Contact Me</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title" style="font-size: 2.2rem; line-height: 1.2;">Energy Generation with Parabolic Thin Film Photovoltaic Modules by Integration of Stirling Engine</h1>
+                <p class="page-subtitle">May 2021</p>
+            </header>
+            
+            <div class="glass-card" style="padding: 3rem;">
+                <div class="content-section">
+                    <h3>Executive Summary</h3>
+                    <p>This research project explores a highly innovative hybrid approach to solar energy collection. By synergizing parabolic concentrators, advanced Copper Indium Gallium Selenide (CIGS) thin-film photovoltaic (PV) modules, and Stirling engines, the system captures both direct solar radiation and unavoidable reflective losses. This unique integration effectively pushes the boundaries of standard PV efficiencies, offering a highly sustainable solution for robust power generation.</p>
+                </div>
+
+                <div id="full-content" class="expandable-content">
+                    <div class="content-section">
+                        <h3>Detailed Technical Explanation</h3>
+                        <p>The core of this architecture relies on CIGS PV modules, renowned for delivering top-tier conversion efficiencies (up to 22.6%) while maintaining cost-effectiveness. These modules are specifically tailored into sector shapes and mounted onto a highly durable parabolic aluminum frame. This geometric configuration enables the precise concentration of incident solar radiation towards a central focal point.</p>
+                        
+                        <p>At this high-temperature focal point, a Stirling engine is strategically positioned. The Stirling engine operates via cyclic compression and expansion of working gases at varying temperature differentials, converting the accumulated thermal energy directly into mechanical work, and subsequently, electrical power.</p>
+                        
+                        <h3>Key Innovations</h3>
+                        <p>A critical engineering decision in this system was the intentional omission of traditional anti-reflective coatings on the solar panels. While typically used to minimize photon bounce in standard flat-panel systems, removing them in this parabolic design allows a greater percentage of radiation to reflect directly into the central focal point. This significantly elevates the operational temperature for the Stirling engine, maximizing the thermodynamic efficiency of the hybrid setup. Furthermore, a regenerator component is integrated within the engine to continuously recycle waste heat, compounding the overall system yield.</p>
+
+                        <h3>Conclusion & Impact</h3>
+                        <p>This project successfully demonstrates a cutting-edge hybrid thermal-photovoltaic architecture. By addressing the inherent thermodynamic limitations of conventional PV arrays, this combined heat and power (CHP) system represents a significant leap forward in renewable energy engineering, capable of meeting escalating global energy demands with unparalleled efficiency.</p>
+                    </div>
+                </div>
+
+                <button id="toggle-btn" class="see-more-btn" onclick="toggleView()">
+                    See Full Explanation <span>&#x25BC;</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleView() {
+            const content = document.getElementById('full-content');
+            const btn = document.getElementById('toggle-btn');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerHTML = 'See Full Explanation <span>&#x25BC;</span>';
+            } else {
+                content.classList.add('expanded');
+                btn.innerHTML = 'Show Less <span>&#x25B2;</span>';
+            }
+        }
+    </script>
+</body>
+</html>

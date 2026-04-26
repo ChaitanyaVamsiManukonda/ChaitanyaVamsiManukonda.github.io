@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 | Chaitanya Vamsi Manukonda</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .content-section { margin-top: 2rem; }
+        .content-section h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.4rem; }
+        .content-section p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); }
+        .content-section ul { margin-left: 20px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+        .expandable-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .expandable-content.expanded { 
+            max-height: 2000px;
+            opacity: 1;
+        }
+        .see-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .see-more-btn:hover {
+            background: var(--accent-primary);
+            color: var(--bg-darker);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">CVM.</div>
+            <div class="nav-links">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="../../skills/" class="nav-link">Skills</a>
+                <a href="../../projects/" class="nav-link active">Projects</a>
+                <a href="../../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../../contactme/" class="nav-link">Contact Me</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title" style="font-size: 2.2rem; line-height: 1.2;">Predictive Modeling for Demand Forecasting and Maintenance in Grocery Stores</h1>
+                <p class="page-subtitle">May 2023</p>
+            </header>
+            
+            <div class="glass-card" style="padding: 3rem;">
+                <div class="content-section">
+                    <h3>Executive Summary</h3>
+                    <p>This data science initiative centers on developing a sophisticated Machine Learning predictive model engineered to forecast weekly sales volumes for grocery retail chains. By leveraging historical transaction data, the predictive system dramatically enhances inventory control, optimizes dynamic supply chain decision-making, and precisely schedules proactive facility maintenance to reduce operational downtime.</p>
+                </div>
+
+                <div id="full-content" class="expandable-content">
+                    <div class="content-section">
+                        <h3>Dataset & Comprehensive Preprocessing</h3>
+                        <p>The model was trained on an expansive Kaggle dataset comprising historical sales data encompassing detailed SKU IDs, dynamic pricing architectures, and featured display indicators. Raw data processing was extensive:</p>
+                        <ul>
+                            <li>Transformed temporal data (weeks) into structured Unix timestamps for algorithmic compatibility.</li>
+                            <li>Executed rigorous data cleansing protocols to eliminate duplicates and intelligently impute missing values.</li>
+                            <li>Established clean feature matrices (X) isolating influential factors, targeting 'units_sold' (y) for supervised learning.</li>
+                            <li>Applied an 80/20 train-test split cross-validation methodology to ensure model generalizability.</li>
+                        </ul>
+                        
+                        <h3>Model Engineering & Hyperparameter Optimization</h3>
+                        <p>Initial algorithmic prototyping utilized Multivariate Linear Regression, which yielded suboptimal R-squared metrics, indicating non-linear underlying patterns. The architecture was subsequently pivoted to a highly robust <strong>Random Forest Regressor</strong> model via Scikit-Learn. </p>
+                        <p>To extract maximum performance, extensive hyperparameter tuning was conducted deploying Grid Search cross-validation across parameters including `n_estimators`, `max_depth`, and `max_leaf_nodes`. This meticulous tuning elevated the model's accuracy, resulting in a final R-squared score of 0.772 with an improved RMSE of 27.306 units.</p>
+
+                        <h3>Strategic Outcomes & Future Implementation</h3>
+                        <p>The finalized Random Forest model successfully explains 77.2% of complex variance in sales data, proving highly effective at predicting consumer demand fluctuations. This actionable intelligence translates directly to optimized just-in-time inventory levels, mitigating capital lockup in overstock while simultaneously preventing high-velocity out-of-stock scenarios. Future implementations aim to integrate real-time API streaming data to continually dynamically retrain the model, paving the way for autonomous inventory procurement architectures.</p>
+                        
+                        <p style="margin-top: 2rem;">
+                            <a href="https://github.com/ChaitanyaVamsiManukonda/Demand-Prediction-with-Parameter-Tuning" class="btn btn-primary" target="_blank">View GitHub Repository</a>
+                        </p>
+                    </div>
+                </div>
+
+                <button id="toggle-btn" class="see-more-btn" onclick="toggleView()">
+                    See Full Explanation <span>&#x25BC;</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleView() {
+            const content = document.getElementById('full-content');
+            const btn = document.getElementById('toggle-btn');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerHTML = 'See Full Explanation <span>&#x25BC;</span>';
+            } else {
+                content.classList.add('expanded');
+                btn.innerHTML = 'Show Less <span>&#x25B2;</span>';
+            }
+        }
+    </script>
+</body>
+</html>

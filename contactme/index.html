@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Chaitanya Vamsi Manukonda</title>
+    <!-- Link to the global stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile Menu Checkbox -->
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-logo">CVM.</div>
+            <div class="nav-links">
+                <a href="../" class="nav-link">Home</a>
+                <a href="../skills/" class="nav-link">Skills</a>
+                <a href="../projects/" class="nav-link">Projects</a>
+                <a href="../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../contactme/" class="nav-link active">Contact Me</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Contact Me</h1>
+                <p class="page-subtitle">Let's Connect</p>
+            </header>
+
+            <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
+                <p style="margin-bottom: 2rem; color: var(--text-secondary); text-align: center;">Please contact me using the form below. Estimated response time is less than 24hrs for valid requests.</p>
+                
+                <form action="https://formspree.io/f/xkgwnabq" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="1234567890" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-method">Preferred Contact Method</label>
+                        <select id="contact-method" name="contact-method" required class="form-control">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="form-control"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

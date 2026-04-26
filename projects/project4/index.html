@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4 | Chaitanya Vamsi Manukonda</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .content-section { margin-top: 2rem; }
+        .content-section h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.4rem; }
+        .content-section p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); }
+        .content-section ul { margin-left: 20px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+        .expandable-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .expandable-content.expanded { 
+            max-height: 2000px;
+            opacity: 1;
+        }
+        .see-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .see-more-btn:hover {
+            background: var(--accent-primary);
+            color: var(--bg-darker);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">CVM.</div>
+            <div class="nav-links">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="../../skills/" class="nav-link">Skills</a>
+                <a href="../../projects/" class="nav-link active">Projects</a>
+                <a href="../../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../../contactme/" class="nav-link">Contact Me</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title" style="font-size: 2.2rem; line-height: 1.2;">Interactive Digital Portfolio Built with HTML5 & CSS3</h1>
+                <p class="page-subtitle">June 2024</p>
+            </header>
+            
+            <div class="glass-card" style="padding: 3rem;">
+                <div class="content-section">
+                    <h3>Executive Summary</h3>
+                    <p>This project involves the end-to-end architectural design, development, and deployment of a fully custom, responsive digital portfolio. Built from the ground up using semantic HTML5 and advanced CSS3 methodologies, the application serves as a dynamic resume that professionally showcases my multifaceted engineering skills, academic history, and technical projects to prospective employers worldwide.</p>
+                </div>
+
+                <div id="full-content" class="expandable-content">
+                    <div class="content-section">
+                        <h3>Architectural Overview & Features</h3>
+                        <p>The platform was engineered specifically avoiding heavy front-end frameworks to demonstrate fundamental mastery over core web technologies and raw DOM styling. It incorporates modern UX/UI principles, resulting in a lightweight, lightning-fast statically served application.</p>
+                        <ul>
+                            <li><strong>Adaptive Responsive Layouts:</strong> Utilizing CSS Grid, Flexbox, and complex media queries, the viewport scales seamlessly across all target devices—from ultra-wide desktop monitors down to mobile cellular devices, ensuring zero structural degradation.</li>
+                            <li><strong>Dynamic Component Styling:</strong> Developed a sleek, cohesive "Dark Glassmorphism" UI system. This features frosted glass contextual layers achieved via `backdrop-filter`, meticulously crafted linear gradients, and subtle, high-performance CSS keyframe animations designed to delight the user without causing performance bottlenecks.</li>
+                            <li><strong>Asynchronous Form Integrations:</strong> A fully integrated Contact module utilizing Formspree endpoints to handle client-side form validation and secure transmission of payload data directly to communication servers without exposing internal logic.</li>
+                        </ul>
+
+                        <h3>Code Structure & Semantic Best Practices</h3>
+                        <p>A rigorous approach to code maintainability was followed. By strictly adhering to W3C semantic markup standards, the site achieves high accessibility scores (a11y) allowing screen readers to effectively parse the content hierarchy. The CSS architecture utilizes scoped variables (`:root` tokens) for color palettes and typographic rules, allowing for instantaneous global theme alterations and a highly scalable stylesheet infrastructure.</p>
+                        
+                        <h3>Deployment & CI/CD Pipeline</h3>
+                        <p>The source code is fully version-controlled using Git, with rapid automated deployments managed directly via GitHub Pages. This infrastructure guarantees that any commits merged to the master branch trigger immediate production builds, delivering an optimal, zero-downtime update lifecycle.</p>
+
+                        <p style="margin-top: 2rem;">
+                            <a href="https://github.com/ChaitanyaVamsiManukonda/ChaitanyaVamsiManukonda.github.io" class="btn btn-primary" target="_blank">View GitHub Repository</a>
+                        </p>
+                    </div>
+                </div>
+
+                <button id="toggle-btn" class="see-more-btn" onclick="toggleView()">
+                    See Full Explanation <span>&#x25BC;</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleView() {
+            const content = document.getElementById('full-content');
+            const btn = document.getElementById('toggle-btn');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerHTML = 'See Full Explanation <span>&#x25BC;</span>';
+            } else {
+                content.classList.add('expanded');
+                btn.innerHTML = 'Show Less <span>&#x25B2;</span>';
+            }
+        }
+    </script>
+</body>
+</html>

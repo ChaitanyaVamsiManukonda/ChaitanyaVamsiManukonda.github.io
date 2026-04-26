@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 | Chaitanya Vamsi Manukonda</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .content-section { margin-top: 2rem; }
+        .content-section h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.4rem; }
+        .content-section p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); }
+        .expandable-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .expandable-content.expanded { 
+            max-height: 2000px;
+            opacity: 1;
+        }
+        .see-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .see-more-btn:hover {
+            background: var(--accent-primary);
+            color: var(--bg-darker);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">CVM.</div>
+            <div class="nav-links">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="../../skills/" class="nav-link">Skills</a>
+                <a href="../../projects/" class="nav-link active">Projects</a>
+                <a href="../../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../../contactme/" class="nav-link">Contact Me</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title" style="font-size: 2.2rem; line-height: 1.2;">Modeling and Analysis of Non-Pneumatic Tyres using FEM Method</h1>
+                <p class="page-subtitle">January 2021 - July 2021</p>
+            </header>
+            
+            <div class="glass-card" style="padding: 3rem;">
+                <div class="content-section">
+                    <h3>Executive Summary</h3>
+                    <p>This engineering project focuses on the rigorous structural analysis of non-pneumatic (airless) tires, an innovative automotive technology designed to eliminate the fundamental vulnerabilities of traditional pneumatic tires—specifically punctures and pressure degradation. By utilizing advanced Finite Element Method (FEM) simulations, this research evaluates various complex geometrical structures to determine the optimal design for maximum load-bearing efficiency and long-term durability.</p>
+                </div>
+
+                <div id="full-content" class="expandable-content">
+                    <div class="content-section">
+                        <h3>Design & Conceptualization</h3>
+                        <p>The development phase initiated with the creation of multiple intricate 3D structural models utilizing CATIA, a premier CAD software suite. A primary focus was placed on exploring hexagonal (honeycomb) geometries, theorized to provide superior uniform stress distribution and unparalleled kinetic flexibility. Every prototype was meticulously engineered to balance the critical trade-off between structural rigidity under heavy dynamic loads and the necessary elasticity required to absorb terrain irregularities.</p>
+                        
+                        <h3>Material Science Integration</h3>
+                        <p>Material selection dictated the fundamental success of the non-pneumatic architecture. The project employed advanced polymeric materials characterized by high tensile strength, supreme fatigue resistance, and excellent environmental stability. These specialized polymers ensure the tire maintains structural integrity across extreme temperature gradients and aggressive chemical exposure, establishing a robust operational lifespan that significantly outlasts traditional rubber compounds.</p>
+                        
+                        <h3>FEM Simulation and Kinematic Analysis</h3>
+                        <p>Following CAD conceptualization, the prototypes were subjected to exhaustive computational stress testing using Ansys. This simulation phase modeled aggressive real-world physical constraints, mapping out exact load distributions, compressive flexibility parameters, and elastic recovery rates. These high-fidelity simulations exposed potential micro-fracture points within the spoke structures, allowing for rapid, data-driven geometric optimizations prior to any physical manufacturing.</p>
+
+                        <h3>Conclusion & Future Implications</h3>
+                        <p>This comprehensive analysis conclusively demonstrated that properly optimized non-pneumatic structures can safely and effectively replace conventional tires in demanding operational environments. The finalized geometric designs provide exceptional shock absorption and eliminate blowout risks entirely. The technical documentation generated from this project lays a critical foundation for scaling airless tire technology toward mainstream commercial automotive production.</p>
+                    </div>
+                </div>
+
+                <button id="toggle-btn" class="see-more-btn" onclick="toggleView()">
+                    See Full Explanation <span>&#x25BC;</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleView() {
+            const content = document.getElementById('full-content');
+            const btn = document.getElementById('toggle-btn');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerHTML = 'See Full Explanation <span>&#x25BC;</span>';
+            } else {
+                content.classList.add('expanded');
+                btn.innerHTML = 'Show Less <span>&#x25B2;</span>';
+            }
+        }
+    </script>
+</body>
+</html>
