@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface | Chaitanya Vamsi Manukonda</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .content-section { margin-top: 2rem; }
+        .content-section h3 { color: var(--accent-blue); margin-bottom: 1rem; font-size: 1.4rem; }
+        .content-section p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); }
+        .content-section ul, .content-section ol { margin-left: 20px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+        .content-section code { background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px; font-family: monospace; }
+        .content-section pre { background: rgba(0,0,0,0.05); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1.5rem; }
+        .expandable-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .expandable-content.expanded { 
+            max-height: 4000px;
+            opacity: 1;
+        }
+        .see-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .see-more-btn:hover {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">CV M.</div>
+            <div class="nav-links">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="../../skills/" class="nav-link">Skills</a>
+                <a href="../../projects/" class="nav-link active">Projects</a>
+                <a href="../../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../../contactme/" class="nav-link">Contact Me</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title" style="font-size: 2.2rem; line-height: 1.2;">AI Chat Interface</h1>
+                <p class="page-subtitle">Recent Project</p>
+            </header>
+            
+            <div class="glass-card" style="padding: 3rem;">
+                <div class="content-section">
+                    <h3>Executive Summary</h3>
+                    <p>A web-based interface for interacting with OpenAI and Anthropic AI models, designed to be deployed on GitHub Pages with Netlify Functions for backend support. It features a complete chat UI with support for RAG (Retrieval-Augmented Generation) training via voice input.</p>
+                </div>
+
+                <div id="full-content" class="expandable-content">
+                    <div class="content-section">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Support for both OpenAI and Anthropic (Claude) APIs</li>
+                            <li>Model selection and Image upload capability</li>
+                            <li>Chat history with message threading</li>
+                            <li>Responsive design that works on mobile and desktop</li>
+                            <li><strong>Voice-triggered RAG training:</strong> Record audio, transcribe it, and train the RAG model with your voice input.</li>
+                        </ul>
+
+                        <h3>Microphone / Voice recording & RAG Training</h3>
+                        <p>This project includes a simple microphone recorder in the chat UI with integrated RAG training. Features:</p>
+                        <ul>
+                            <li>Record audio from your browser (click the 🎤 button).</li>
+                            <li>Live speech-to-text (Web Speech API) in supporting browsers — transcribe as you speak.</li>
+                            <li>Play back and download recorded audio.</li>
+                            <li>Train RAG with transcript — after recording, click "📚 Train RAG with transcript" to add your transcript to the retrieval index.</li>
+                            <li>Send audio to server for processing and optional cloud transcription.</li>
+                        </ul>
+
+                        <h3>Voice-to-RAG Training Workflow</h3>
+                        <ol>
+                            <li>Click 🎤 to start recording audio. Speak naturally into your microphone.</li>
+                            <li>Stop recording when done.</li>
+                            <li>After recording, choose to Insert transcript, Train RAG with transcript, or Send audio.</li>
+                            <li>Your transcript is now indexed and will be retrieved when relevant queries are asked.</li>
+                        </ol>
+
+                        <h3>Setup & Technical Details</h3>
+                        <p><strong>Project Structure:</strong> Includes HTML, vanilla JS, and serverless Netlify functions.</p>
+                        <p><strong>RAG Index Management:</strong> The retrieval index is stored locally and accessed via serverless endpoints. Query with retrieval: If no LLM API keys are configured, zero-cost retrieval provides top-K documents.</p>
+                        <p><strong>Security:</strong> API keys are securely stored as environment variables in Netlify and processed through a secure proxy (Netlify Functions) over HTTPS.</p>
+                        <p><strong>Privacy:</strong> Audio is recorded locally. Transcripts are added to a local JSON index and not sent to external services unless explicitly enabled.</p>
+                        
+                        <p style="margin-top: 2rem;">
+                            <a href="https://github.com/ChaitanyaVamsiManukonda/chatbot" class="btn btn-primary" target="_blank">View GitHub Repository</a>
+                        </p>
+                    </div>
+                </div>
+
+                <button id="toggle-btn" class="see-more-btn" onclick="toggleView()">
+                    See Full Explanation <span>&#x25BC;</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleView() {
+            const content = document.getElementById('full-content');
+            const btn = document.getElementById('toggle-btn');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerHTML = 'See Full Explanation <span>&#x25BC;</span>';
+            } else {
+                content.classList.add('expanded');
+                btn.innerHTML = 'Show Less <span>&#x25B2;</span>';
+            }
+        }
+    </script>
+</body>
+</html>
