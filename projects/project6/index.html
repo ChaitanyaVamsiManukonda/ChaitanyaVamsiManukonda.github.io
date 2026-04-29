@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleRAG_with_Autoingest | Chaitanya Vamsi Manukonda</title>
+    <link rel="stylesheet" href="../../style.css">
+
+</head>
+<body>
+    <div class="app-container">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">CV M.</div>
+            <div class="nav-links">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="../../skills/" class="nav-link">Skills</a>
+                <a href="../../projects/" class="nav-link active">Projects</a>
+                <a href="../../professionalexperience/" class="nav-link">Professional Experience</a>
+                <a href="../../academicexperience/" class="nav-link">Academic Experience</a>
+                <a href="../../contactme/" class="nav-link">Contact Me</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title" style="font-size: 2.2rem; line-height: 1.2;">SimpleRAG_with_Autoingest (Document Assistant)</h1>
+                <p class="page-subtitle">Recent Project</p>
+            </header>
+            
+            <div class="glass-card" style="padding: 3rem;">
+                <div class="content-section">
+                    <h3>Executive Summary</h3>
+                    <p>A powerful, local Retrieval-Augmented Generation (RAG) system that uses Anthropic's Claude and local embeddings to answer questions about your documents.</p>
+                </div>
+
+                <div id="full-content" class="expandable-content">
+                    <div class="content-section">
+                        <h3>Features</h3>
+                        <ul>
+                            <li><strong>Auto-Ingestion:</strong> Automatically processes new PDF and TXT files placed in the documents/ folder.</li>
+                            <li><strong>Smart Retrieval:</strong> Uses semantic search with sentence-transformers and FAISS to find the most relevant context.</li>
+                            <li><strong>Powered by Claude:</strong> Generates accurate, context-aware answers using Anthropic's Claude 4.5 Haiku model.</li>
+                            <li><strong>Persistent Storage:</strong> Saves processed embeddings to a local vector database so you don't have to re-index everything.</li>
+                        </ul>
+
+                        <h3>Setup</h3>
+                        <h4>1. Prerequisites</h4>
+                        <ul>
+                            <li>Python 3.8 or higher</li>
+                            <li>An Anthropic API Key</li>
+                        </ul>
+                        
+                        <h4>2. Installation</h4>
+                        <p>Clone or open the project. Create and activate a virtual environment:</p>
+                        <pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; font-family: monospace;"><code># Windows
+python -m venv venv
+.\venv\Scripts\Activate</code></pre>
+                        <p>Install dependencies:</p>
+                        <pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; font-family: monospace;"><code>pip install -r requirements.txt</code></pre>
+                        <p>Configure API Key: Create a file named .env in the project root and add your API key:</p>
+                        <pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; font-family: monospace;"><code>ANTHROPIC_API_KEY=sk-ant-api03-your-key-here</code></pre>
+
+                        <h3>Usage</h3>
+                        <h4>1. Add Documents</h4>
+                        <p>Simply drop your .pdf or .txt files into the documents/ folder. The system will automatically ingest them the next time you run a query.</p>
+
+                        <h4>2. Ask Questions</h4>
+                        <p>Run the query command to ask questions about your documents:</p>
+                        <pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; font-family: monospace;"><code>python main.py query --query "What are the key points in the monthly report?"</code></pre>
+                        
+                        <h4>3. Manual Ingestion (Optional)</h4>
+                        <p>If you want to ingest a specific file from a different location:</p>
+                        <pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; font-family: monospace;"><code>python main.py ingest --document "C:\path\to\your\file.pdf"</code></pre>
+
+                        <h3>Advanced Configuration</h3>
+                        <p>You can tune the RAG performance with additional flags:</p>
+                        <ul>
+                            <li><code>--top-k 5</code>: Number of chunks to send to Claude (default: 5).</li>
+                            <li><code>--fetch-k 20</code>: Number of candidates to fetch before re-ranking (default: 20).</li>
+                            <li><code>--index-type ivf</code>: Use 'ivf' index for faster search on very large datasets (default: 'flat').</li>
+                            <li><code>--model</code>: Specify a different Claude model version.</li>
+                        </ul>
+
+                        <h3>Project Structure</h3>
+                        <ul>
+                            <li><strong>main.py:</strong> Entry point and CLI interface.</li>
+                            <li><strong>src/:</strong> Core logic (Document processing, Vector store, Pipeline).</li>
+                            <li><strong>documents/:</strong> Default folder for input files.</li>
+                            <li><strong>vector_db/:</strong> Storage for the vector embeddings.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button id="toggle-btn" class="see-more-btn" onclick="toggleView()">
+                    See Full Explanation <span>&#x25BC;</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleView() {
+            const content = document.getElementById('full-content');
+            const btn = document.getElementById('toggle-btn');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerHTML = 'See Full Explanation <span>&#x25BC;</span>';
+            } else {
+                content.classList.add('expanded');
+                btn.innerHTML = 'Show Less <span>&#x25B2;</span>';
+            }
+        }
+    </script>
+</body>
+</html>
